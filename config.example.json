@@ -1,0 +1,9 @@
+{
+    "obs": {
+        "url": "ws://localhost:4455",
+        "password": "12345"
+    },
+    "server": {
+        "port": 3000
+    }
+}

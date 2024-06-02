@@ -3,6 +3,11 @@
         "url": "ws://localhost:4455",
         "password": "12345"
     },
+    "twitch": {
+        "userId": "YOUR_TWITCH_USER_ID",
+        "clientId": "YOUR_TWITCH_CLIENT_ID",
+        "clientSecret": "YOUR_TWITCH_SECRET"
+    },
     "server": {
         "port": 3000
     }

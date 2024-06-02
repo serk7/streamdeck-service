@@ -4,7 +4,8 @@
   "description": "",
   "main": "src/index.ts",
   "scripts": {
-    "start": "ts-node src/index.ts"
+    "start": "ts-node src/index.ts",
+    "authtwitch": "ts-node src/tools/authTwitch.ts"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +17,9 @@
     "typescript": "^5.4.5"
   },
   "dependencies": {
+    "@twurple/api": "^7.1.0",
+    "@twurple/auth": "^7.1.0",
+    "@twurple/chat": "^7.1.0",
     "express": "^4.19.2",
     "obs-websocket-js": "^5.0.5",
     "terminal-kit": "^3.1.1"

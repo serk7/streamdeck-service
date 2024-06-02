@@ -20,7 +20,7 @@ export default class Server {
     start() : Promise<void>{
         this.app.use('/obs/change_scene/:sceneName', async (req, res) => {
             try {
-                await this.obs.changeScene(req.params.sceneName)
+                await api.changeScene(req.params.sceneName, this.obs)
                 res.send("OK")
             } catch (error) {
                 res.status(500).send(error)

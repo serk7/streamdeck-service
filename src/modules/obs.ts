@@ -22,4 +22,11 @@ export default class OBS {
             sceneName: scene
         })
     }
+
+    startTimer() {
+        return this.obs.call("CallVendorRequest", {
+            vendorName: "adanced-timer",
+            requestType: "start_timer"
+        })
+    }
 }

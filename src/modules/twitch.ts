@@ -38,4 +38,10 @@ export default class Twitch {
         if (!user) throw new Error("User not found")
         await this.api.chat.sendChatMessage(user, message).catch(err => console.error(err))
     }
+
+    async predicition(channel: string, title: string, outcomes: string[], autoLockAfter: number) {
+        const user = await this.api.users.getUserByName(channel)
+        if (!user) throw new Error("User not found")
+        await this.api.predictions.createPrediction(user, {title, outcomes, autoLockAfter}).catch(err => console.error(err))
+    }
 }

@@ -1,8 +1,14 @@
 import changeScene from "./obs/changeScene"
 
 import say from "./twitch/say"
+import prediction from "./twitch/prediction"
 
 export default {
-    changeScene,
-    say
+    obs: {
+        changeScene
+    },
+    twitch: {
+        say,
+        prediction
+    }
 }

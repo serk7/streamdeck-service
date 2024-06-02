@@ -15,6 +15,7 @@ export default class Server {
 
     constructor(config: IServer, obs: OBS, twitch: Twitch) {
         this.app = express()
+        this.app.use(express.json())
         this.config = config
         this.obs = obs
         this.twitch = twitch
@@ -23,7 +24,7 @@ export default class Server {
     start() : Promise<void>{
         this.app.use('/obs/change_scene/:sceneName', async (req, res) => {
             try {
-                await api.changeScene(req.params.sceneName, this.obs)
+                await api.obs.changeScene(req.params.sceneName, this.obs)
                 res.send("OK")
             } catch (error) {
                 res.status(500).send(error)
@@ -32,7 +33,24 @@ export default class Server {
 
         this.app.use('/twitch/say/:channel/:message', async (req, res) => {
             try {
-                await api.say(req.params.channel, req.params.message, this.twitch)
+                await api.twitch.say(req.params.channel, req.params.message, this.twitch)
+                res.send("OK")
+            } catch (error) {
+                res.status(500).send(error)
+            }
+        })
+        
+        this.app.post('/twitch/prediction/:channel', async (req, res) => {
+            const requiredFields = ["title", "outcomes", "duration"]
+            for (const field of requiredFields) {
+                if (!req.body[field]) {
+                    res.status(400).send(`Missing required field: ${field}`)
+                    return
+                }
+            }
+            const {title, outcomes, duration} = req.body
+            try {
+                await api.twitch.prediction(req.params.channel, title, outcomes, duration, this.twitch)
                 res.send("OK")
             } catch (error) {
                 res.status(500).send(error)

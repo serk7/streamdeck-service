@@ -48,5 +48,5 @@ server.get("/", (req, res) => {
 
 server.listen(3000, () => {
     console.log('Server listening on port 3000');
-    console.log(`Visit: https://id.twitch.tv/oauth2/authorize?client_id=${config.twitch.clientId}&redirect_uri=${redirectUrl}&response_type=code&scope=chat:read+chat:edit+moderator:manage:banned_users+moderator:manage:chat_messages`)
+    console.log(`Visit: https://id.twitch.tv/oauth2/authorize?client_id=${config.twitch.clientId}&redirect_uri=${redirectUrl}&response_type=code&scope=user:write:chat`)
 })

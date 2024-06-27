@@ -30,6 +30,15 @@ export default class Server {
                 res.status(500).send(error)
             }
         })
+        
+        this.app.use('/obs/microphone/:mute', async (req, res) => {
+            try {
+                await api.obs.microphone(req.params.mute === "mute", this.obs)
+                res.send("OK")
+            } catch (error) {
+                res.status(500).send(error)
+            }
+        })
 
         this.app.use('/twitch/say/:channel/:message', async (req, res) => {
             try {

@@ -23,6 +23,13 @@ export default class OBS {
         })
     }
 
+    microphone(mute: boolean) {
+        return this.obs.call("SetInputMute", {
+            inputName: "Mic/Aux",
+            inputMuted: mute
+        })
+    }
+
     startTimer() {
         return this.obs.call("CallVendorRequest", {
             vendorName: "adanced-timer",

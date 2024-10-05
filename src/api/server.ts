@@ -66,6 +66,33 @@ export default class Server {
             }
         })
 
+        this.app.get('/obs/get_scene_item_list/:scene', async (req, res) => {
+            try {
+                const items = await api.obs.getSceneItemList(req.params.scene, this.obs)
+                res.send(items)
+            } catch (error) {
+                res.status(500).send(error)
+            }
+        })
+
+        this.app.get('/obs/get_input_settings/:inputName', async (req, res) => {
+            try {
+                const settings = await api.obs.getInputSettings(req.params.inputName, this.obs)
+                res.send(settings)
+            } catch (error) {
+                res.status(500).send(error)
+            }
+        })
+
+        this.app.post('/obs/set_input_settings/:inputName', async (req, res) => {
+            try {
+                await api.obs.setInputSettings(req.params.inputName, req.body, this.obs)
+                res.send("OK")
+            } catch (error) {
+                res.status(500).send(error)
+            }
+        })
+
         return new Promise((resolve, reject) => {
             this.app.listen(this.config.port, () => {
                 resolve()

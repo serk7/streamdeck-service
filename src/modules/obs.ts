@@ -17,23 +17,42 @@ export default class OBS {
         return this.obs.connect(this.config.url, this.config.password)
     }
 
-    changeScene(scene: string) {
-        return this.obs.call("SetCurrentProgramScene", {
+    async changeScene(scene: string) {
+        return await this.obs.call("SetCurrentProgramScene", {
             sceneName: scene
         })
     }
 
-    microphone(mute: boolean) {
-        return this.obs.call("SetInputMute", {
+    async microphone(mute: boolean) {
+        return await this.obs.call("SetInputMute", {
             inputName: "Mic/Aux",
             inputMuted: mute
         })
     }
 
-    startTimer() {
-        return this.obs.call("CallVendorRequest", {
+    async startTimer() {
+        return await this.obs.call("CallVendorRequest", {
             vendorName: "adanced-timer",
             requestType: "start_timer"
+        })
+    }
+
+    async getSceneItemList(scene: string) {
+        return await this.obs.call("GetSceneItemList", {
+            sceneName: scene
+        })
+    }
+
+    async getInputSettings(inputName: string) {
+        return await this.obs.call("GetInputSettings", {
+            inputName: inputName
+        })
+    }
+
+    async setInputSettings(inputName: string, settings: any) {
+        return await this.obs.call("SetInputSettings", {
+            inputName: inputName,
+            inputSettings: settings
         })
     }
 }

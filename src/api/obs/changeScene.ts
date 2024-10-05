@@ -1,5 +1,5 @@
 import OBS from '../../modules/obs'
 
-export default function changeScene (scene: string, obs: OBS) {
-    return obs.changeScene(scene)
+export default async function changeScene (scene: string, obs: OBS) {
+    return await obs.changeScene(scene)
 }

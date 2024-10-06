@@ -35,6 +35,20 @@ This is a simple service that allows you to control your Streamdeck from a web i
 
 1. Run `npm start`
 
+## Features
+
+### OBS
+- Change scenes
+- Get input settings
+- Set input settings
+- Get item list from scene
+- Mute/Unmute microphone
+### Twitch
+- Send messages to chat
+- Start prediction
+### Scripts
+- Open an application and set it to a specifict input in OBS
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

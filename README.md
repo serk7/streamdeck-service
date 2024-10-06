@@ -7,7 +7,7 @@ This is a simple service that allows you to control your Streamdeck from a web i
 - [Node.js](https://nodejs.org/en/)
 - [OBS](https://obsproject.com/)
 - [xdotool](https://www.semicomplete.com/projects/xdotool/)
-- [Xorg](https://www.x.org/wiki/) or [Wayland](https://wayland.freedesktop.org/)
+- [Xorg](https://www.x.org/wiki/)
 
 ## Installation
 

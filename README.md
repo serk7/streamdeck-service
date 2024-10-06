@@ -8,6 +8,7 @@ This is a simple service that allows you to control your Streamdeck from a web i
 - [OBS](https://obsproject.com/)
 - [xdotool](https://www.semicomplete.com/projects/xdotool/)
 - [Xorg](https://www.x.org/wiki/)
+- [Wayland](https://wayland.freedesktop.org/)(May work everything less script to open applications)
 
 ## Installation
 

@@ -49,7 +49,7 @@ export default class OBS {
         })
     }
 
-    async setInputSettings(inputName: string, settings: any) {
+    async setInputSettings(inputName: string, settings: any) : Promise<any> {
         return await this.obs.call("SetInputSettings", {
             inputName: inputName,
             inputSettings: settings

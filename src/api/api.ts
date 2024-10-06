@@ -4,6 +4,8 @@ import getSceneItemList from "./obs/getSceneItemList"
 import getInputSettings from "./obs/getInputSettings"
 import setInputSettings from "./obs/setInputSettings"
 
+import openAppOnInput from "./scripts/openAppOnInput"
+
 import say from "./twitch/say"
 import prediction from "./twitch/prediction"
 
@@ -14,6 +16,9 @@ export default {
         getSceneItemList,
         getInputSettings,
         setInputSettings
+    },
+    scripts: {
+        openAppOnInput
     },
     twitch: {
         say,

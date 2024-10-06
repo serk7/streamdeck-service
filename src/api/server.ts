@@ -93,6 +93,16 @@ export default class Server {
             }
         })
 
+        this.app.post('/scripts/open_app_on_input/:inputName', async (req, res) => {
+            const { commandLine } = req.body
+            try {
+                await api.scripts.openAppOnInput(req.params.inputName, commandLine, this.obs)
+                res.send("OK")
+            } catch (error) {
+                res.status(500).send
+            }
+        })
+
         return new Promise((resolve, reject) => {
             this.app.listen(this.config.port, () => {
                 resolve()

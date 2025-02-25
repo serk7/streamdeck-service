@@ -18,13 +18,13 @@ This is a simple service that allows you to control your Streamdeck from a web i
 ```
 {
     "obs": {
-        "address": "ws://localhost:4455",
-        "password": "your-obs-password"
+        "url": "ws://localhost:4455",
+        "password": "12345"
     },
     "twitch": {
-        "username": "your-twitch-username",
-        "password": "your-twitch-oauth-token",
-        "channel": "your-twitch-channel"
+        "userId": "YOUR_TWITCH_USER_ID",
+        "clientId": "YOUR_TWITCH_CLIENT_ID",
+        "clientSecret": "YOUR_TWITCH_SECRET"
     },
     "server": {
         "port": 3000
